@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    background-color: rgb(255, 253, 255);
+
+    
+}
+
+
+#bmiCalculator {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   margin: auto;
+   margin-top: 200px;
+    width: 280px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.myInput{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+
+
+}
+
+
+#bmiCalculator:hover {
+    background-color: rgba(0,0,0,0.7);
+ 
+}
+
+#calculateBtn{
+    margin-top: 10px;
+    
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+    </style>
+
+
+
+
+  
+    <div id="bmiCalculator">
+    
+        <p>Weight (kg) : </p>
+        <input class="myInput
+        " id="weightInput" type="number">
+        <p> Height (meter) : </p>
+        <input class="myInput" id="heightInput" type="number">
+        <button onclick="bmiCalculate()" id="calculateBtn"> Calculate </button>
+        <p>Your BMI is : <span id="result"> </span> </p>
+        </div>
+  
+
+
+
+
+
+
+
+
+
+    <script>
+    function bmiCalculate(){
+        const wInput = document.getElementById('weightInput').value;
+        const hInput = document.getElementById('heightInput').value;
+        const bmi = wInput /( hInput * hInput);
+        document.getElementById('result').innerHTML =parseFloat(bmi).toFixed(2)
+
+    }
+
+    </script>
+</body>
+</html>
